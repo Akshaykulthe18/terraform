@@ -8,7 +8,14 @@ pipeline{
         TF_IN_AUTOMATION = "true"
         PATH = "$TF_HOME:$PATH"
     }
-
+    stages {
+        stage('Hello') {
+            steps {
+                sh label: '', script: '''#!/bin/bash
+                    echo "hello world" 
+                '''
+            }
+        }
     
         stage('Terraform Init'){
             
