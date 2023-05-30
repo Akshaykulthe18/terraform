@@ -8,12 +8,20 @@ pipeline{
         TF_IN_AUTOMATION = "true"
         PATH = "$TF_HOME:$PATH"
     }
-    stages {
-        stage('Hello') {
-            steps {
-                bat label: '', script: '''#!/bin/bash
-                    echo "hello world" 
-                '''
+   stages{
+        stage('Git Checkout'){
+            steps{
+                git 'https://github.com/Akshaykulthe18/terraform.git'
+            }
+        }
+        stage("set env variabl"){
+            steps{
+                sh 'export AZ_PROFILE=ilab'
+            }
+        }
+        stage('Get Directory') {
+            steps{
+                println(WORKSPACE)
             }
         }
     
