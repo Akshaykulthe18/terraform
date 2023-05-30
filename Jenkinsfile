@@ -11,7 +11,7 @@ pipeline{
      stages {
         stage('Hello') {
             steps {
-                bat label: '', script: '''
+                sh label: '', script: '''
                     echo "hello world" 
                 '''
             }
