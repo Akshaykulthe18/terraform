@@ -6,7 +6,7 @@ variable "client_id" {
 }
 
 variable "client_secret" {
-    description =   "H3C8Q~n3EZJGj6OUY1UPIv8C4grwC~OWtVP.cdjP"
+    description =   ".qV8Q~yxs..AMWV5SjdDjYrF3d3h2eofH3C1xdj8"
     type        =   string
 }
 
