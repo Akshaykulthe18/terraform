@@ -6,6 +6,12 @@ terraform {
       version = "3.12.0"
     }
   }
+  backend "azurerm" {
+      resource_group_name  = "DefaultResourceGroup-EUS"
+        storage_account_name = "demo159"
+          container_name       = "$logs"
+            key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
