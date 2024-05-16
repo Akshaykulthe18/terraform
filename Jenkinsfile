@@ -20,7 +20,7 @@ pipeline{
         stage('Terraform Init'){
             
             steps {
-                    bat ansiColor('xterm') {
+                    ansiColor('xterm') {
                     withCredentials([azureServicePrincipal(
                     credentialsId: 'Azure',
                     subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
