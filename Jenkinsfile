@@ -17,6 +17,17 @@ pipeline {
             }
         }
 
+        stage('Test Access Key') {
+            steps {
+                withCredentials([string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')]) {
+                    bat """
+                        echo "Testing Access Key"
+                        echo "Access Key: ${ARM_ACCESS_KEY}"
+                    """
+                }
+            }
+        }
+
         stage('Terraform Init') {
             steps {
                 ansiColor('xterm') {
