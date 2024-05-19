@@ -19,7 +19,7 @@ pipeline {
 
         stage('Test Access Key') {
             steps {
-                withCredentials([string(credentialsId: 'azure-access-key', variable: 'ARM_ACCESS_KEY')]) {
+                withCredentials([string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')]) {
                     bat """
                         echo "Testing Access Key"
                         echo "Access Key: %ARM_ACCESS_KEY%"
@@ -39,7 +39,7 @@ pipeline {
                             clientSecretVariable: 'ARM_CLIENT_SECRET',
                             tenantIdVariable: 'ARM_TENANT_ID'
                         ),
-                        string(credentialsId: 'azure-access-key', variable: 'ARM_ACCESS_KEY')
+                        string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')
                     ]) {
                         bat '''
                             echo "Initialising Terraform"
@@ -61,7 +61,7 @@ pipeline {
                             clientSecretVariable: 'ARM_CLIENT_SECRET',
                             tenantIdVariable: 'ARM_TENANT_ID'
                         ),
-                        string(credentialsId: 'azure-access-key', variable: 'ARM_ACCESS_KEY')
+                        string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')
                     ]) {
                         bat '''
                             terraform validate
@@ -82,7 +82,7 @@ pipeline {
                             clientSecretVariable: 'ARM_CLIENT_SECRET',
                             tenantIdVariable: 'ARM_TENANT_ID'
                         ),
-                        string(credentialsId: 'azure-access-key', variable: 'ARM_ACCESS_KEY')
+                        string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')
                     ]) {
                         bat '''
                             echo "Creating Terraform Plan"
@@ -112,7 +112,7 @@ pipeline {
                             clientSecretVariable: 'ARM_CLIENT_SECRET',
                             tenantIdVariable: 'ARM_TENANT_ID'
                         ),
-                        string(credentialsId: 'azure-access-key', variable: 'ARM_ACCESS_KEY')
+                        string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')
                     ]) {
                         bat '''
                             echo "Applying the plan"
