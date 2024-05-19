@@ -8,7 +8,7 @@ terraform {
   }
   backend "azurerm" {
       resource_group_name  = "DefaultResourceGroup-EUS"
-        storage_account_name = "demo159"
+        storage_account_name = "access101"
           container_name       = "$logs"
             key                  = "terraform.tfstate"
   }
