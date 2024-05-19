@@ -43,7 +43,7 @@ pipeline {
                     ]) {
                         bat '''
                             echo "Initialising Terraform"
-                            terraform init -backend-config="access_key=%ARM_ACCESS_KEY%"
+                            C:\\terraform\\terraform.exe init -backend-config="access_key=%ARM_ACCESS_KEY%"
                         '''
                     }
                 }
